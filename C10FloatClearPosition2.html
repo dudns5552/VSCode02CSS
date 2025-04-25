@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C10FloatClearPosition2.html</title>
+  <style>
+    .box1 { background-color: red;}
+    .box2 { background-color: green;}
+    .box3 { background-color: blue;}
+    .w100 { width: 100px;}
+    .h100 { height: 100px;}
+  </style>
+</head>
+<body>
+  <h2>position 기본 속성</h2>
+
+  <fieldset>
+    <legend>static</legend>
+    <div class="box1 w100 h100" style="position: static; left: 100px;
+    top: 0;">static
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>relative</legend>
+    <div class="box2 w100 h100" 
+      style="position: relative; left: 100px; top: 0px;">
+      relative
+    </div>
+  </fieldset>
+
+  
+  <fieldset style="position: relative;">
+    <legend>absolute</legend>
+    <div class="box3 w100 h100" 
+      style="position: absolute; left: 100px; top: 0px;">
+      absolute
+    </div>
+  </fieldset>
+  <p style="height: 100px;"></p>
+
+
+  <h2>배치</h2>
+  <fieldset style="position: static;">
+    <legend>position : static</legend>
+    <div class="box1 w100 h100" 
+      style="position: static; left: 0px; top: 0px;">
+      box1(0,0)
+    </div>
+    <div class="box2 w100 h100" 
+      style="position: static; left: 50px; top: 50px;">
+      box2(50,50)
+    </div>
+    <div class="box3 w100 h100"
+      style="position: static; left: 100px; top: 100px;">
+      box3(100,100)
+    </div>
+  </fieldset>
+
+
+  <fieldset style="position: relative;">
+    <legend>position : relative</legend>
+    <div class="box1 w100 h100"
+      style="position: relative; left: 0px; top: 0px;">
+      box1(0,0)
+    </div>
+    <div class="box2 w100 h100" 
+    style="position: relative; left: 50px; top: -50px;">
+      box2(50,-50)
+    </div>
+    <div class="box3 w100 h100"
+      style="position: relative; left: 100px; top: -100px;">
+      box3(100,-100)
+    </div>
+  </fieldset>
+
+
+  <fieldset style="position: absolute;">
+    <legend>position : absolute</legend>
+    <div class="box1 w100 h100" 
+      style="position: absolute; left: 0px; top: 0px;
+      z-index: 9999;">
+      box1(0,0)
+    </div>
+    <div class="box2 w100 h100" 
+      style="position: absolute; left: 50px; top: 50px;
+      z-index: 5000;">
+      box2(50,50)
+    </div>
+    <div class="box3 w100 h100" 
+      style="position: absolute; left: 100px; top: 100px;
+      z-index: 1;">
+      box3(100,100)
+    </div>
+  </fieldset>
+</body>
+</html>

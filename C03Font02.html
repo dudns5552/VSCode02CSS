@@ -5,20 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C03Font02.html</title>
   <style>
+    /* 현재 문서의 기본폰트 사이즈를 12px로 지정 */
     body {
       font-size: 12px;
     }
+    /* 해당 문서의 모든 a태그를 선택해서 스타일을 지정. 텍스트에 별도의
+    효과가 없는 상태로 설정 */
     a{
       text-decoration: none; color: black;
       }
+    /* 텍스트에 마우스를 올렸을때의 스타일 설정. 텍스트에는 '밑줄'이 생기고
+    색깔, 크기가 변경됨 */
     a:hover {
       text-decoration: underline; color: green;
       font-size: 30px; font-weight: bold;
     }
+    /* 링크를 클릭하면 '윗줄'이 생김 */
+    a:active {
+      text-decoration: overline; color: red;
+    }
+    /* 해당 링크에 방문 이력이 있는경우 텍스트의 '중간라인'이 생성된다.
+    현재는 지원되지 않는다. */
     a:visited {
       text-decoration: line-through; color: blue;
     }
 
+    /* 
+    a태그중에서 other 클래스를 가진 엘리먼트를 선택하여 스타일을 설정.
+    만약 a와 .사이에 스페이스(공백)이 들어가면 하위셀렉터가 되므로
+    주의해야 한다. */
     a.other{
       text-decoration: none; color: brown;
     }

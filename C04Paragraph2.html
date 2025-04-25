@@ -12,10 +12,96 @@
   </style>
 </head>
 <body>
+  <!-- 
+  line-height : 줄간격 설정을 위한 속성. 즉 라인사이의 간격을 띄우는데
+    블럭과 인라인은 조금 다르게 적용된다.
+    - 블럭엘리먼트 : 컨텐츠의 영역 중 세로 영역이 늘어나서 마치 줄간격이
+      생기는 것처럼 보인다.
+    - 인라인엘리먼트 : 컨텐츠의 영역은 변화가 없고, 지정된 크기만큼 
+      줄간격이 생겨 벌어진다.
+    따라서 같은 값을 주더라도 조금 다른것을 볼 수 있다.
+  -->
   <style>
     .divLine > div {
       border: 1px solid blue;
     }
+    .divLine > div:first-child {
+      line-height: 4em;
+    }
   </style>
+  <h2>줄간격 - 블럭엘리먼트</h2>
+  <div class="divLine">
+    <div>블럭엘리먼트1에 줄간격 적용</div>
+    <div>블럭엘리먼트2</div>
+    <div>블럭엘리먼트3</div>
+  </div>
+
+
+  <style>
+    .inline > span {
+      border: 1px solid black;
+    }
+    .inline > span:first-child {
+      line-height: 4em;
+    }
+  </style>
+  <h2>줄간격 - 인라인엘리먼트</h2>
+  <div class="inline">
+    <span>인라인엘리먼트1에 줄간격 적용</span><br>
+    <span>인라인엘리먼트2</span><br>
+    <span>인라인엘리먼트3</span>
+  </div>
+
+
+  <h2>배분정렬</h2>
+  <!-- 
+  배분정렬 : 각기 다른 길이의 단어를 사용함으로써 발생되는 우측의 
+    불규칙적인 여백을 깔끔하게 정리해준다.
+  -->
+  <p style="text-align: justify;" class="boBlack">
+    Lorem ipsum dolor sit amet, 이 텍스트는 단지 디자인을 채우기 
+    위한 용도입니다. Consectetur adipiscing elit, 실제로 읽히는 것이 
+    목적이 아니죠. Sed do eiusmod tempor incididunt ut labore et 
+    dolore magna aliqua. 그러므로 오탈자나 말이 안 돼도 괜찮습니다. 
+    Ut enim ad minim veniam, 그저 공간을 채우는 것이니까요. 
+    <br><br>
+    Duis aute irure dolor in reprehenderit in voluptate velit esse 
+    cillum dolore eu fugiat nulla pariatur. 이러한 문장은 흔히 광고 
+    시안, 웹사이트 레이아웃, 또는 앱 디자인 초안에서 쓰입니다. 
+    Excepteur sint occaecat cupidatat non proident, 디자이너는 
+    이를 통해 텍스트의 길이나 배치를 미리 확인하죠. Sunt in 
+    culpa qui officia deserunt mollit anim id est laborum.
+    <br><br>
+    때로는 한글 텍스트만으로는 공간이 부족해 보일 수 있어서, 영어를 
+    섞어 표현하기도 합니다. Lorem ipsum text helps maintain the visual 
+    balance of your layout, 글자 수와 자간 등을 고려할 때 유용하니까요. 
+    Even if the reader doesn’t understand it, 문서 전체의 분위기나 
+    느낌은 전달되거든요.
+    <br><br>
+  </p>
+
+
+  <h2>들여쓰기</h2>
+  <!-- 
+  블럭엘리먼트는 가로 길이가 100%이므로 공간이 충분하여 text-indent를
+  통해 들여쓰기를 할 수 있다. -->
+  <div style="text-indent: 2em;" class="boBlue">
+    블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+  </div>
+  <!-- 
+  인라인엘리먼트는 공간이 없으므로 부모에서 패딩을 통해 우측으로
+  밀어줘야 한다. -->
+  <div style="padding-left: 20px;" class="boRed">
+    <span style="text-indent: 50em;" class="boBlack">
+      인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+      인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+      인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+      인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+    </span>
+  </div>
+
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
