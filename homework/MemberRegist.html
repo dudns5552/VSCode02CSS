@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MemberFind.html</title>
+   <style>
+      #icon{
+         font-weight: bold; color: red;
+         font-size: 24px;
+      }
+      #fs1{
+
+         border-top: solid #777777;
+         border-left: solid #777777;
+         border-bottom: solid #bbbbbb;
+         border-right: solid #bbbbbb;
+         border-width: 5px;
+      }
+      #fs2 {
+         border-top: 5px solid #bbbbbb;
+         border-left: 5px solid #bbbbbb;
+         border-bottom: 5px solid #777777;
+         border-right: 5px solid #777777;
+      }
+      #fs3 {
+
+         border-top: solid #777777;
+         border-left: solid #777777;
+         border-bottom: solid #bbbbbb;
+         border-right: solid #bbbbbb;
+         border-width: 5px;
+      }
+      tr :last-child{
+         padding-left: 15px;
+      }
+   </style>
+   <script>
+   function displayTest1() {
+      console.log("클릭되나요?");
+      var a = document.getElementById("id");
+      var b = document.getElementById("pw");
+      if(a.style.display=='none') {
+        a.style.display = "block";
+        b.style.display = "none";
+      }
+    }
+    function displayTest2() {
+      console.log("클릭되나요?");
+      var a = document.getElementById("pw");
+      var b = document.getElementById("id");
+      if(a.style.display=='none') {
+        a.style.display = "block";
+        b.style.display = "none";
+      }
+    }
+    function call1() {
+      var a = document.getElementsByName('emph')[0];
+      var v = a.value;
+      var phone1 = document.getElementById("phone1");
+      var email1 = document.getElementById("email1");
+      if(v == "phone1") {
+        phone1.style.display = "block";
+        email1.style.display = "none";
+      }
+      else if(v == "email1") {
+        email1.style.display = "block";
+        phone1.style.display = "none";
+      }
+    }
+    function call2() {
+      var a = document.getElementsByName('emph2')[0];
+      var v = a.value;
+      var phone2 = document.getElementById("phone2");
+      var email2 = document.getElementById("email2");
+      if(v == "phone2") {
+        phone2.style.display = "block";
+        email2.style.display = "none";
+      }
+      else if(v == "email2") {
+        email2.style.display = "block";
+        phone2.style.display = "none";
+      }
+    }
+    </script>
+
+</head>
+<body>
+   <form style="font-weight: bold; color: #777777;">
+      <input type="radio" name="idpw" onclick="displayTest1()"
+      checked>
+      아이디 찾기
+      <input type="radio" name="idpw" onclick="displayTest2()">
+      비밀번호 찾기
+      <fieldset id="fs1" style="padding: 0;">
+      <fieldset id="fs2" >
+   
+      <div style=" text-align: center;
+         font-size: 14px; padding-top: 30px;"
+         id="id">
+         <table style="margin: auto; text-align: left;">
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  <span>이름(대표자명)</span>
+               </td>
+               <td>
+                  <input type="text" size="40" style="height: 18px;">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <select name="emph" 
+                  style="width: 85px; height: 23px;"
+                  onchange="call1()">
+                     <option value="phone1">
+                        휴대전화</option>
+                     <option value="email1">
+                        이메일</option>
+                  </select>
+               </td>
+               <td id="phone1" style="padding-left: 15px;
+               padding-top: 10px;
+                  height: 30px;">
+               <input type="text" size="1" style="height: 16px;">
+               -
+               <input type="text" size="2"style="height: 16px;">
+               -
+               <input type="text" size="2" style="height: 16px;">
+               </td>
+               <td id="email1" style="display: none;
+               padding-top: 10px;">
+                  <input type="text" size="9" style="height: 18px;">
+                  @
+                  <input type="text" size="9" style="height: 18px;">
+                  <select name="email" style="height: 24px; width: 100px;">
+                     <option value="직접입력">직접입력</option>
+                     <option value="gmail.com">gmail.com</option>
+                     <option value="naver.com">naver.com</option>
+                     <option value="hanmail.net">hanmail.net</option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+
+         <span style="font-size: 10px;">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+         </span>
+         <br><br><br>
+         <span style="font-size: 13px; color: #777777;
+            font-weight: normal;">
+            아이디를 찾기 위해서 이름과 휴대전화 혹은 이메일을 입력하세요.
+         </span>
+         <br><br>
+      </div>
+      
+
+
+      <div style=" text-align: center;
+               font-size: 14px; padding-top: 30px;
+               display: none;" id="pw">
+         <table style="margin: auto; text-align: left;">
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                &nbsp;&nbsp;
+                <span>아이디</span>
+               </td>
+               <td>
+                  <input type="text" size="40" style="height: 18px;">
+               </td>
+                
+               
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;
+                  <span>이름(대표자명)</span>
+               </td>
+               <td>
+                     <input type="text" size="40" style="height: 18px;">  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <select name="emph2" style="width: 85px; height: 23px;"
+                     onchange="call2()">
+                     <option value="email2">이메일</option>
+                     <option value="phone2">전화번호</option>
+                  </select>
+               </td>
+               <td id="email2" style="padding-left: 15px;
+                  padding-top: 10px;">
+                  <input type="text" size="9" style="height: 18px;">
+                  @
+                  <input type="text" size="9" style="height: 18px;">
+                  <select name="email" style="height: 24px; width: 100px;">
+                     <option value="직접입력">직접입력</option>
+                     <option value="gmail.com">gmail.com</option>
+                     <option value="naver.com">naver.com</option>
+                     <option value="hanmail.net">hanmail.net</option>
+                  </select>
+               </td>
+               <td id="phone2" style="display: none; height: 30px;
+                  padding-top: 10px;">
+                     <input type="text" size="1" style="height: 16px;">
+                     -
+                     <input type="text" size="2" style="height: 16px;">
+                     -
+                     <input type="text" size="2" style="height: 16px;">
+               </td>
+            </tr>
+               
+         </table>
+               <br>
+               <span style="font-size: 10px;">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+               </span>
+               <br><br><br>
+            <span style="font-size: 13px; color: #777777; font-weight: normal;">
+               비밀번호를 찾기 위해서 아이디와 이름, 전화번호 혹은 이메일을 입력하세요.
+            </span>
+            <br><br>
+         </div>
+
+      </fieldset>
+   </fieldset>
+
+</form>
+</body>
+</html>
