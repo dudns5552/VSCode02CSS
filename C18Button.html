@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C18Button.html</title>
+</head>
+<body>
+  <h2>버튼 효과1</h2>
+  <style>
+    a.button1:link, a.button1:visited {
+      background-color: white;
+      color: black;
+      border: 2px solid green;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+    a.button1:hover, a.button1:active {
+      background-color: green;
+      color: white;
+    }
+  </style>
+  <a href="#" class="button1">a태그로 만든 버튼</a>
+
+
+
+  <h2>버튼 효과2</h2>
+  <style>
+    .button {
+      background-color: black; /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #008CBA;
+    }
+    .button2:hover {
+      background-color: #008CBA;
+      color: white;
+    }
+  </style>
+  <button class="button button2">button태그로 만든 버튼1</button>
+
+
+
+
+
+  <h2>버튼 효과3</h2>
+  <style>
+    .button3 {
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 24px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #af4c9e;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+    }
+    .button3:hover {
+      background-color: #7e3672;
+    }
+    .button3:active {
+      background-color: #7e3672;
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    }
+  </style>
+  <button class="button3">button태그로 만든 버튼2</button>
+</body>
+</html>

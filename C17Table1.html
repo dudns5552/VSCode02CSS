@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C17Table1.html</title>
+</head>
+<body>
+  <h2>테이블1 - HTML속성</h2>
+  <table id="table1" border="0" cellspacint="1" cellpadding="5"
+  width="400" bgcolor="gray">
+  <tr bgcolor="silver">
+    <th>이름</th>
+    <th>나이</th>
+    <th>몸무게</th>
+  </tr>
+  <tr bgcolor="white">
+    <td>이순신</td>
+    <td>30세</td>
+    <td>77kg</td>
+  </tr>
+  <tr bgcolor="white">
+    <td>홍길동</td>
+    <td>25세</td>
+    <td>65kg</td>
+  </tr>
+  </table>
+
+
+
+  <h2>테이블2 - CSS속성</h2>
+  <style>
+    #table2 {
+      width: 400px;
+      border: 1px solid gray;
+      /* border-collapse: collapse; */
+      border-collapse: separate;
+    }
+    #table2 th{
+      background-color: silver;
+    }
+    #table2 th, #table2 td {
+      border: 1px solid gray;
+      padding: 5px;
+    }
+  </style>
+  <table id="table2">
+  <tr>
+    <th>이름</th>
+    <th>나이</th>
+    <th>몸무게</th>
+  </tr>
+  <tr>
+    <td>이순신</td>
+    <td>30세</td>
+    <td>77kg</td>
+  </tr>
+  <tr>
+    <td>홍길동</td>
+    <td>25세</td>
+    <td>65kg</td>
+  </tr>
+  </table>
+</body>
+</html>
