@@ -103,13 +103,19 @@
          <span id="rdask">* </span>이메일</td>
       <td>
          <input type="text" size="8"> @
-         <input type="text" size="8" placeholder="gmail.com">
-         <select name="이메일">
+         <input type="text" size="8" list="email">
+         <datalist id="email">
             <option value="gamil.com">gamil.com</option>
             <option value="naver.com">naver.com</option>
             <option value="daum.net">daum.net</option>
             <option value="hanmail.net">hanmail.net</option>
-         </select>
+         </datalist>
+         <!-- <input type="text" name="i7" list="what"><br>
+                    <datalist id="what">
+                        <option value="산"></option>
+                        <option value="바다"></option>
+                        <option value="도시"></option>
+                    </datalist> -->
          <input type="radio" name="수신" value="수신허용" checked>수신허용
          &nbsp;&nbsp;
          <input type="radio" name="수신" value="수신불가">수신불가
