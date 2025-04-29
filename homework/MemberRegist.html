@@ -82,6 +82,25 @@
         phone2.style.display = "none";
       }
     }
+    function domain1() {
+      var d = document.getElementsByName('domain1')[0];
+      var dmain = d.value;
+      var ad = document.getElementsByClassName("mailaddress1")[0];
+      if(dmain){
+         ad.value = dmain;
+      }
+      else {
+         ad.value = "";
+      }
+    }
+    function domain2() {
+      var d = document.getElementsByName('domain2');
+      var dmain = d.value;
+      var ad = document.getElementsByClassName("mailaddress2");
+      if(dmain){
+         ad.value = dmain;
+      }
+    }
     </script>
 
 </head>
@@ -134,9 +153,11 @@
                padding-top: 10px;">
                   <input type="text" size="9" style="height: 18px;">
                   @
-                  <input type="text" size="9" style="height: 18px;">
-                  <select name="email" style="height: 24px; width: 100px;">
-                     <option value="직접입력">직접입력</option>
+                  <input class="mailaddress1" type="text" size="9" 
+                     style="height: 18px;">
+                  <select name="domain1" style="height: 24px; 
+                     width: 100px;" onchange="domain1()">
+                     <option value="">직접입력</option>
                      <option value="gmail.com">gmail.com</option>
                      <option value="naver.com">naver.com</option>
                      <option value="hanmail.net">hanmail.net</option>
@@ -197,9 +218,11 @@
                   padding-top: 10px;">
                   <input type="text" size="9" style="height: 18px;">
                   @
-                  <input type="text" size="9" style="height: 18px;">
-                  <select name="email" style="height: 24px; width: 100px;">
-                     <option value="직접입력">직접입력</option>
+                  <input type="text" size="9" class="mailaddress2"
+                     style="height: 18px;">
+                  <select name="domain2" onchange="domain2()"
+                     style="height: 24px; width: 100px;">
+                     <option value="">직접입력</option>
                      <option value="gmail.com">gmail.com</option>
                      <option value="naver.com">naver.com</option>
                      <option value="hanmail.net">hanmail.net</option>

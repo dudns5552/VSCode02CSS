@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <body>
+      <h2>회원가입 - 이메일 입력</h2>
+    
+      <div>
+        <input type="text" id="emailId" placeholder="이메일 아이디 입력"> @
+        <select id="emailDomain" onchange="fillEmail()">
+          <option value="">도메인 선택</option>
+          <option value="gmail.com">gmail.com</option>
+          <option value="naver.com">naver.com</option>
+          <option value="daum.net">daum.net</option>
+          <option value="custom">직접 입력</option>
+        </select>
+        <input type="text" id="fullEmail" placeholder="전체 이메일" readonly>
+      </div>
+    
+      <script>
+        function fillEmail() {
+          const id = document.getElementById("emailId").value;
+          const domainSelect = document.getElementById("emailDomain");
+          const selectedDomain = domainSelect.value;
+          const fullEmailInput = document.getElementById("fullEmail");
+    
+          if (selectedDomain === "custom") {
+            fullEmailInput.readOnly = false;
+            fullEmailInput.value = "@";
+            fullEmailInput.focus();
+          } else if ( selectedDomain) {
+            fullEmailInput.readOnly = true;
+            fullEmailInput.value = "@" + selectedDomain;
+          } else {
+            fullEmailInput.value = "";
+          }
+        }
+      </script>
+    </body>
+</body>
+</html>
