@@ -3,241 +3,255 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>MemberRegist.html</title>
+   <title>MemberFind.html</title>
    <style>
-      #in{
-         width: 90%;  border: 2px #cccccc solid;
-         padding: 0 30px 15px; border-collapse: collapse;
+      #icon{
+         font-weight: bold; color: red;
+         font-size: 24px;
       }
-      tr>:first-child{
-         font-weight: bold; 
-         background-color: #dddddd;
-         padding: 5px; 
-      }
-      tr td:last-child{
-         padding: 10px;
-      }
-      tr td {
-         border: 2px #cccccc solid;
-      }
-      #gray {
-         background-color: lightgray;
-      }
-      #bkbt {
-         background-color: #373737;
-      }
-      #rdask {
-         color: red; font-weight: normal; border: none;
-      }
-      #rdbt {
-         background-color: #ff2222;
-      }
-      #ftgy {
-         color: #888888; font: 10pt normal;
-      }
-      .button {
-         color: white; border-radius: 3px; border: none;
-         font: 10px bold; padding: 2px 5px;
-      }
-      
-   </style>
-</head>
-<body>  
+      #fs1{
 
-   <form>
-   <table id="in">  
-      <caption id="rdask" style="text-align: right;">
-         &midast; 
-         <span style="color: black;">
-            필수입력
+         border-top: solid #777777;
+         border-left: solid #777777;
+         border-bottom: solid #bbbbbb;
+         border-right: solid #bbbbbb;
+         border-width: 5px;
+      }
+      #fs2 {
+         border-top: 5px solid #bbbbbb;
+         border-left: 5px solid #bbbbbb;
+         border-bottom: 5px solid #777777;
+         border-right: 5px solid #777777;
+      }
+      #fs3 {
+
+         border-top: solid #777777;
+         border-left: solid #777777;
+         border-bottom: solid #bbbbbb;
+         border-right: solid #bbbbbb;
+         border-width: 5px;
+      }
+      tr :last-child{
+         padding-left: 15px;
+      }
+   </style>
+   <script>
+   function displayTest1() {
+      console.log("클릭되나요?");
+      var a = document.getElementById("id");
+      var b = document.getElementById("pw");
+      if(a.style.display=='none') {
+        a.style.display = "block";
+        b.style.display = "none";
+      }
+    }
+    function displayTest2() {
+      console.log("클릭되나요?");
+      var a = document.getElementById("pw");
+      var b = document.getElementById("id");
+      if(a.style.display=='none') {
+        a.style.display = "block";
+        b.style.display = "none";
+      }
+    }
+    function call1() {
+      var a = document.getElementsByName('emph')[0];
+      var v = a.value;
+      var phone1 = document.getElementById("phone1");
+      var email1 = document.getElementById("email1");
+      if(v == "phone1") {
+        phone1.style.display = "block";
+        email1.style.display = "none";
+      }
+      else if(v == "email1") {
+        email1.style.display = "block";
+        phone1.style.display = "none";
+      }
+    }
+    function call2() {
+      var a = document.getElementsByName('emph2')[0];
+      var v = a.value;
+      var phone2 = document.getElementById("phone2");
+      var email2 = document.getElementById("email2");
+      if(v == "phone2") {
+        phone2.style.display = "block";
+        email2.style.display = "none";
+      }
+      else if(v == "email2") {
+        email2.style.display = "block";
+        phone2.style.display = "none";
+      }
+    }
+    function domain1() {
+      var d = document.getElementsByName('domain1')[0];
+      var dmain = d.value;
+      var ad = document.getElementsByClassName("mailaddress1")[0];
+      if(dmain){
+         ad.value = dmain;
+      }
+      else {
+         ad.value = "";
+      }
+    }
+    function domain2() {
+      var d = document.getElementsByName('domain2');
+      var dmain = d.value;
+      var ad = document.getElementsByClassName("mailaddress2");
+      if(dmain){
+         ad.value = dmain;
+      }
+    }
+    </script>
+
+</head>
+<body>
+   <form style="font-weight: bold; color: #777777;">
+      <input type="radio" name="idpw" onclick="displayTest1()"
+      checked>
+      아이디 찾기
+      <input type="radio" name="idpw" onclick="displayTest2()">
+      비밀번호 찾기
+      <fieldset id="fs1" style="padding: 0;">
+      <fieldset id="fs2" >
+   
+      <div style=" text-align: center;
+         font-size: 14px; padding-top: 30px;"
+         id="id">
+         <table style="margin: auto; text-align: left;">
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  <span>이름(대표자명)</span>
+               </td>
+               <td>
+                  <input type="text" size="40" style="height: 18px;">
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <select name="emph" 
+                  style="width: 85px; height: 23px;"
+                  onchange="call1()">
+                     <option value="phone1">
+                        휴대전화</option>
+                     <option value="email1">
+                        이메일</option>
+                  </select>
+               </td>
+               <td id="phone1" style="padding-left: 15px;
+               padding-top: 10px;
+                  height: 30px;">
+               <input type="text" size="1" style="height: 16px;">
+               -
+               <input type="text" size="2"style="height: 16px;">
+               -
+               <input type="text" size="2" style="height: 16px;">
+               </td>
+               <td id="email1" style="display: none;
+               padding-top: 10px;">
+                  <input type="text" size="9" style="height: 18px;">
+                  @
+                  <input class="mailaddress1" type="text" size="9" 
+                     style="height: 18px;">
+                  <select name="domain1" style="height: 24px; 
+                     width: 100px;" onchange="domain1()">
+                     <option value="">직접입력</option>
+                     <option value="gmail.com">gmail.com</option>
+                     <option value="naver.com">naver.com</option>
+                     <option value="hanmail.net">hanmail.net</option>
+                  </select>
+               </td>
+            </tr>
+         </table>
+
+         <span style="font-size: 10px;">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
          </span>
-      </caption>
-   
-   <tr>
-      <td style="width: 120px;" >
-         <span id="rdask">*</span>아이디</td>
-         
-      <td>
-         <input type="text" size="10">
-         <input type="button" id="bkbt" class="button" value="중복확인">
-         <span id="ftgy" style="padding: 20px;">+ 4~15자, 첫 영문자, 영문자와 숫자 조합</span>
-      </td>
-   </tr>
-   <tr>
-      <td><span id="rdask">* </span>비밀번호</td>
-      <td>
-         <input type="text" size="8">
-      </td>
-   </tr>
-   <tr>
-      <td><span id="rdask">* </span>비밀번호 확인</td>
-      <td>
-         <input type="text" size="8">
-         <span id="ftgy" style="padding: 5px;"> (확인을 위해 다시 입력해 주세요.)</span>
-      </td>
-   </tr>
-   <tr>
-      <td><span id="rdask">* </span>이름</td>
-      <td>
-         <input type="text"  size="10">
-         
-      </td>
-   </tr>
-   <tr>
-      <td style="padding-left: 15px;">생년월일</td>
-      <td>
-         <input type="radio" name="성별" value="남자" checked>남자
-         &nbsp;&nbsp;
-         <input type="radio" name="성별" value="여자">여자
-         &nbsp;&nbsp;&nbsp;&nbsp;
-         <input type="text" size="4">년 
-         &nbsp;
-         <input type="text" size="1">월
-         &nbsp;
-         <input type="text" size="1">일
-         <span id="ftgy" style="padding: 15px;"> (예, 2000년 1월 31일)</span>
-      </td>
-   </tr>
-   <tr>
-      <td rowspan="2">
-         <span id="rdask">* </span>이메일</td>
-      <td>
-         <input type="text" size="8"> @
-         <input type="text" size="8" list="email">
-         <datalist id="email">
-            <option value="gamil.com">gamil.com</option>
-            <option value="naver.com">naver.com</option>
-            <option value="daum.net">daum.net</option>
-            <option value="hanmail.net">hanmail.net</option>
-         </datalist>
-         <!-- <input type="text" name="i7" list="what"><br>
-                    <datalist id="what">
-                        <option value="산"></option>
-                        <option value="바다"></option>
-                        <option value="도시"></option>
-                    </datalist> -->
-         <input type="radio" name="수신" value="수신허용" checked>수신허용
-         &nbsp;&nbsp;
-         <input type="radio" name="수신" value="수신불가">수신불가
-      </td>
-   </tr>
-   <tr>
-      <!-- <td></td> -->
-      <td style="background-color: white;
-         height: 0; line-height: 5px;" id="ftgy">
-   
-         ※ hanmail.net은 메일 수신이 어려울 수 있으니 가급적 다른 메일을
-            이용하시기 바랍니다.
-         
-      </td>
-   </tr>
-   <tr>
-      <td rowspan="3" style="padding-left: 18px;">
-         주소
-      </td>
-      <td>
-         <input type="button" id="bkbt" class="button" value="주소찾기">
-         <input type="text" size="5"> 
-         <span id="ftgy" style="color: #373737;">(우편번호)</span>
-      </td>
-   </tr>
-   <tr>
-      <!-- <td></td> -->
-      <td style="background-color: white;">
-         <input type="text" size="85">
-         
-      </td>
-   </tr>
-   <tr>
-      <!-- <td></td> -->
-      <td style="background-color: white;">
-         <input type="text" size="70">
-         <span id="ftgy" style="color: #373737; padding-left: 10px;"> 
-            + 나머지 주소</span>
-      </td>
-   </tr>
-   <tr>
-      <td  style="padding-left: 17px;">전화번호</td>
-      <td>
-         <input type="text" size="1">
-         -
-         <input type="text" size="2">
-         -
-         <input type="text" size="2">
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <span id="rdask">* </span>휴대전화
-      </td>
-      <td>
-         <input type="text" size="1">
-         -
-         <input type="text" size="2">
-         -
-         <input type="text" size="2">
-         <input type="radio" name="SMS" value="수신허용"
-         checked>
-         <span id="ftgy" style="color: #373737;">SMS 수신허용</span>
-         <input type="radio" name="SMS" value="수신거부">
-         <span id="ftgy" style="color: #373737;">SMS 수신거부</span>
-      </td>
-   </tr>
-   <tr>
-      <td><span id="rdask">* </span>관심분야</td>
-      <td>
-         <select name="관심분야">
-            <option value=":: 관심분야 선택 ::">
-               :: 관심분야 선택 ::
-            </option>
-            <option value="풀스택">
-               풀스택
-            </option>
-            <option value="프론트엔드">
-               프론트엔드
-            </option>
-            <option value="백엔드">
-               백엔드
-            </option>
-            <option value="게임">
-               게임
-            </option>
-            <option value="임베디드">
-               임베디드
-            </option>
-         </select>
-      </td>
-   </tr>
-   <tr>
-      <td><span id="rdask">* </span>가입경로</td>
-      <td>
-         <select name="가입경로">
-            <option value=":: 가입경로 선택 ::">
-               :: 가입경로 선택 ::
-            </option>
-            <option value="">
-               인터넷
-            </option>
-            <option value="">
-               지인추천
-            </option>
-            <option value="">
-               기사
-            </option>
-         </select>
-      </td>
-   </tr>   
-   </table>
-   <div style="text-align: center; padding-top: 20px;
-      word-spacing: 15px;">
-   <input type="button" id="rdbt" value="등록하기"
-      style="border-radius: 3px; border: none; width: 100px;
-      height: 30px; color: white; font-weight: bold;">
-   <input type="button" id="bkbt" value="새로 쓰기"
-   style="border-radius: 3px; border: none; width: 100px;
-   height: 30px; color: white; font-weight: bold;">
-</div>
+         <br><br><br>
+         <span style="font-size: 13px; color: #777777;
+            font-weight: normal;">
+            아이디를 찾기 위해서 이름과 휴대전화 혹은 이메일을 입력하세요.
+         </span>
+         <br><br>
+      </div>
+      
+
+
+      <div style=" text-align: center;
+               font-size: 14px; padding-top: 30px;
+               display: none;" id="pw">
+         <table style="margin: auto; text-align: left;">
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                &nbsp;&nbsp;
+                <span>아이디</span>
+               </td>
+               <td>
+                  <input type="text" size="40" style="height: 18px;">
+               </td>
+                
+               
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;
+                  <span>이름(대표자명)</span>
+               </td>
+               <td>
+                     <input type="text" size="40" style="height: 18px;">  
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <span id="icon">></span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <select name="emph2" style="width: 85px; height: 23px;"
+                     onchange="call2()">
+                     <option value="email2">이메일</option>
+                     <option value="phone2">전화번호</option>
+                  </select>
+               </td>
+               <td id="email2" style="padding-left: 15px;
+                  padding-top: 10px;">
+                  <input type="text" size="9" style="height: 18px;">
+                  @
+                  <input type="text" size="9" class="mailaddress2"
+                     style="height: 18px;">
+                  <select name="domain2" onchange="domain2()"
+                     style="height: 24px; width: 100px;">
+                     <option value="">직접입력</option>
+                     <option value="gmail.com">gmail.com</option>
+                     <option value="naver.com">naver.com</option>
+                     <option value="hanmail.net">hanmail.net</option>
+                  </select>
+               </td>
+               <td id="phone2" style="display: none; height: 30px;
+                  padding-top: 10px;">
+                     <input type="text" size="1" style="height: 16px;">
+                     -
+                     <input type="text" size="2" style="height: 16px;">
+                     -
+                     <input type="text" size="2" style="height: 16px;">
+               </td>
+            </tr>
+               
+         </table>
+               <br>
+               <span style="font-size: 10px;">. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+               </span>
+               <br><br><br>
+            <span style="font-size: 13px; color: #777777; font-weight: normal;">
+               비밀번호를 찾기 위해서 아이디와 이름, 전화번호 혹은 이메일을 입력하세요.
+            </span>
+            <br><br>
+         </div>
+
+      </fieldset>
+   </fieldset>
+
 </form>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
